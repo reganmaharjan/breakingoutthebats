@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ptichSliderScript : MonoBehaviour
+public class frequencySliderScript : MonoBehaviour
 {
 
-    public Slider sliderInstance;
-    public Slider audiovolume;
+    public Slider frequency;
+    public GameObject wave;
 
     public AudioSource audioSource;
     // Start is called before the first frame update
+
     void Start()
     {
-        audioSource.volume = audiovolume.value;
+        audioSource.pitch = frequency.value;
     }
 
     public void OnValueChanged(float value)
     {
         audioSource.pitch = value;
         audioSource.Play();
+        if (value == 0)
+        {
+            wave.SetActive(false);
+        }
     }
+
 
 }

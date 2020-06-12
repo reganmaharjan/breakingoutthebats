@@ -22,5 +22,6 @@ public class loudnessSliderScript : MonoBehaviour
         audioSource.volume = value;
         audioSource.Play();
     }
+   
 
 }
